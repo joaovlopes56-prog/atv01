@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <div class="caixa-login">
+        <h2>Login</h2>
+        <input type="text" id="usuario" placeholder="Usuário">
+        <br>
+        <input type="password" id="senha" placeholder="Senha">
+        <br>
+        <button onclick="login()">Entrar</button>
+        <p id="mensagem"></p>
+    </div>
+
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            margin-top: 100px;
+            background-color: rgb(3, 3, 3);
+            display: flex;
+            justify-content: center;
+        }
+        .caixa-login {
+            background-color: rgb(248, 243, 243);
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(238, 235, 235, 0.1);
+            width: 300px;
+        }
+        input {
+            padding: 15px;
+            margin: 10px 0;
+            color: rgb(2, 2, 2);
+            width: 80%;
+        }
+        button {
+            padding: 12px 30px;
+            color: rgb(5, 6, 7);
+            margin-top: 10px;
+            
+            font-weight: bold;
+        }
+        #mensagem {
+            margin-top: 20px;
+            font-weight: bold; 
+           height: 10px;
+        }
+    </style>
+
+    <script>
+        function login() {
+            let usuario = document.getElementById("usuario").value;
+            let senha = document.getElementById("senha").value;
+            let mensagem = document.getElementById("mensagem");
+
+            if (usuario == "" || senha == "") {
+                mensagem.style.color = "orange"; 
+                mensagem.innerHTML = "Preencha todos os campos!";
+            } else if (usuario != "joao") {
+                mensagem.style.color = "blue"; 
+                mensagem.innerHTML = "Usuário não existe!";
+            } else if (senha != "1234") {
+                mensagem.style.color = "red"; 
+                mensagem.innerHTML = "Senha incorreta!";
+            } else {
+                mensagem.style.color = "green"; 
+                mensagem.innerHTML = "Login realizado com sucesso!";
+            }
+        }
+    </script>
+</body>
+</html>
